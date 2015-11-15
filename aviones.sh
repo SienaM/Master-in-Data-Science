@@ -1,7 +1,4 @@
 #!/bin/sh
 
 #Creamos el listado de motores
-csvsort -d '^' -c nb_engines optd_aircraft.csv -r| csvcut -c nb_engines > listado.csv 
-
-#Indicamos el número de aviones por cada número de motores
-cat listado.csv |uniq -c| tail -n +2    
+csvsort -d '^' -c nb_engines $1 -r| csvcut -c nb_engines | csvgrep -c nb_engines -m $2 |tail -n +2  | wc -l
