@@ -49,6 +49,7 @@ SELECT
 FROM ref_airline_nb_of_flights a
 RIGHT OUTER JOIN optd_airlines  b
 ON b."2char_code" = a.airline_code_2c
+ORDER BY flight_freq DESC LIMIT 10
 ;
 
 --Nº de países con más de 3 ciudades con elevación superior a la media
